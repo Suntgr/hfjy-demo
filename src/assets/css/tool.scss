@@ -1,0 +1,68 @@
+// flex center
+@mixin center-flex($direction: both) {
+  display: flex;
+  @if $direction == both {
+    justify-content: center;
+    align-items: center;
+  }
+  @else if $direction == x {
+    justify-content: center;
+  }
+  @else if $direction == y {
+    align-items: center;
+  }
+}
+
+// translate center
+@mixin center-translate($direction: both) {
+  position: absolute;
+  @if $direction == both {
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  @else if $direction == x {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+  @else if $direction == y {
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+// 1px border
+@mixin retina-one-px-border($direction: top, $color: #e0e0e0) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+
+  @if $direction == top or $direction == bottom{
+    right: 0;
+    height: 0;
+    transform: scaleY(0.5);
+    border-top: 1px solid $color;
+  }
+  @if $direction == bottom {
+    top: auto;
+    bottom: 0;
+  }
+  @if $direction == right or $direction == left{
+    width: 0;
+    bottom: 0;
+    transform: scaleX(0.5);
+    border-left: 1px solid $color;
+  }
+  @if $direction == right {
+    left: auto;
+    right: 0;
+  }
+  @if $direction == all {
+    width: 200%;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(0.5);
+    border: 1px solid $color;
+  }
+}
