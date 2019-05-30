@@ -22,7 +22,7 @@
   body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
     background-color: #fbf9fe;
-    font-size: 126px;
+    font-size: 16px;
     color: #333;
   }
 
