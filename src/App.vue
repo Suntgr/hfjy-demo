@@ -24,6 +24,7 @@
     background-color: #fbf9fe;
     font-size: 16px;
     color: #333;
+    line-height: 3;
   }
 
   * {
